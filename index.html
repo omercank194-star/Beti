@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yavrum ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff7f9;
+    color: #49363c;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ARKA PLAN KALPLERİ */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    opacity: 0.18;
+    animation: float 8s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 30%; animation-delay: 3s; }
+.heart:nth-child(3) { left: 55%; animation-delay: 1s; }
+.heart:nth-child(4) { left: 80%; animation-delay: 5s; }
+.heart:nth-child(5) { left: 90%; animation-delay: 2s; }
+
+@keyframes float {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+    }
+}
+
+/* ANA BÖLÜM */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.small {
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c98598;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(65px, 12vw, 125px);
+    line-height: 0.9;
+    color: #9f5268;
+    margin-bottom: 30px;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.9;
+    color: #725a61;
+}
+
+.scroll {
+    margin-top: 50px;
+    display: inline-block;
+    color: #b86d82;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* GENEL */
+
+section {
+    padding: 110px 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+}
+
+.title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    color: #9f5268;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    text-align: center;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.9;
+    color: #735d63;
+}
+
+/* FOTOĞRAFLAR */
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 55px;
+}
+
+.photo {
+    background: white;
+    padding: 12px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(120,70,85,0.10);
+    transform: rotate(-2deg);
+    transition: 0.4s;
+}
+
+.photo:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.photo:nth-child(3) {
+    transform: rotate(1deg);
+}
+
+.photo:nth-child(4) {
+    transform: rotate(-1deg);
+}
+
+.photo:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.photo img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+.photo p {
+    text-align: center;
+    padding: 14px 5px 7px;
+    font-size: 14px;
+    color: #80666d;
+}
+
+/* MEKTUP */
+
+.letter-section {
+    background: #fff;
+}
+
+.letter {
+    max-width: 720px;
+    margin: 50px auto 0;
+    background: #fffafa;
+    padding: 55px;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(100,50,65,0.09);
+    line-height: 2;
+    font-size: 17px;
+}
+
+.letter .hello {
+    font-family: 'DM Serif Display', serif;
+    font-size: 35px;
+    color: #9f5268;
+    margin-bottom: 25px;
+}
+
+.letter p {
+    margin-bottom: 20px;
+}
+
+/* NEDEN */
+
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 55px;
+}
+
+.reason {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(120,70,85,0.08);
+}
+
+.reason span {
+    font-size: 35px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.reason h3 {
+    margin-bottom: 10px;
+    color: #a2586d;
+}
+
+.reason p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #806b71;
+}
+
+/* SON */
+
+.final {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.final-box {
+    max-width: 700px;
+}
+
+.final h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(50px, 8vw, 85px);
+    color: #9f5268;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.final p {
+    font-size: 18px;
+    line-height: 2;
+    color: #705960;
+}
+
+.big-heart {
+    font-size: 65px;
+    margin: 35px 0;
+    animation: beat 1.5s infinite;
+}
+
+@keyframes beat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+}
+
+button {
+    margin-top: 30px;
+    border: none;
+    background: #a95870;
+    color: white;
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.06);
+    background: #91485e;
+}
+
+#message {
+    margin-top: 25px;
+    display: none;
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: #a95870;
+}
+
+/* MOBİL */
+
+@media (max-width: 700px) {
+
+    .photos {
+        grid-template-columns: 1fr;
+    }
+
+    .photo img {
+        height: 380px;
+    }
+
+    .reasons {
+        grid-template-columns: 1fr;
+    }
+
+    .letter {
+        padding: 30px;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- UÇAN KALPLER -->
+
+<div class="heart">♡</div>
+<div class="heart">♡</div>
+<div class="heart">♡</div>
+<div class="heart">♡</div>
+<div class="heart">♡</div>
+
+
+<!-- GİRİŞ -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small">sana küçük bir şey hazırladım</div>
+
+        <h1>Yavrum.</h1>
+
+        <p>
+            Bazen insanın söylemek istediği çok şey olur
+            ama hiçbir kelime tam olarak yetmez.
+            <br><br>
+            Ben yine de denemek istedim.
+        </p>
+
+        <a href="#photos" class="scroll">
+            aşağıya gel ♡
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOTOĞRAFLAR -->
+
+<section id="photos">
+
+    <div class="container">
+
+        <div class="title">Bizden birkaç parça</div>
+
+        <div class="subtitle">
+            Şu fotoğraflara her baktığımda aynı şeyi düşünüyorum:
+            Sen hayatımın en güzel taraflarından birisin.
+        </div>
+
+        <div class="photos">
+
+            <div class="photo">
+                <img src="foto1.jpg">
+                <p>Bu gülüşünü çok seviyorum.</p>
+            </div>
+
+            <div class="photo">
+                <img src="foto2.jpg">
+                <p>Seninle geçen zamanın yeri ayrı.</p>
+            </div>
+
+            <div class="photo">
+                <img src="foto3.jpg">
+                <p>İyi ki bu anı yaşamışız.</p>
+            </div>
+
+            <div class="photo">
+                <img src="foto4.jpg">
+                <p>Birlikte daha çok anımız olsun.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MEKTUP -->
+
+<section class="letter-section">
+
+    <div class="container">
+
+        <div class="title">Sana söylemek istediklerim</div>
+
+        <div class="letter">
+
+            <div class="hello">
+                Yavrum,
+            </div>
+
+            <p>
+                Bazen seni ne kadar çok sevdiğimi anlatmaya
+                çalışırken kelimeler birbirine giriyor.
+                O yüzden bu sefer uzun uzun anlatmak yerine
+                sana hissettirmek istedim.
+            </p>
+
+            <p>
+                Sen yanımdayken hayatın bazı şeyleri daha güzel.
+                Bir mesajın, bir gülüşün, saçma sapan bir şakan
+                bile günümü değiştirebiliyor.
+            </p>
+
+            <p>
+                Sen olmadığında ise fark ediyorum ki,
+                hayatımda kocaman bir eksiklik oluyor.
+                Çünkü ben seni yalnızca sevdiğim insan olarak değil,
+                hayatımın en güzel alışkanlığı olarak görüyorum.
+            </p>
+
+            <p>
+                Senin yüzünü güldürmek,
+                sana güzel şeyler yaşatmak,
+                birlikte saçma sapan şeylere gülmek
+                ve daha bir sürü güzel anı biriktirmek istiyorum.
+            </p>
+
+            <p>
+                Her şeyi mükemmel yapacağımı söyleyemem.
+                Ama seni mutlu etmek için elimden geleni
+                yapacağımdan emin olabilirsin.
+            </p>
+
+            <p>
+                Çünkü sen benim için gerçekten çok özelsin.
+            </p>
+
+            <p style="text-align:right;">
+                Seni çok seven,<br>
+                Ömercan ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KÜÇÜK ŞEYLER -->
+
+<section>
+
+    <div class="container">
+
+        <div class="title">Seni neden seviyorum?</div>
+
+        <div class="subtitle">
+            Aslında bunun cevabı birkaç kutuya sığmayacak kadar fazla.
+            Ama birkaç tanesini buraya bırakayım.
+        </div>
+
+        <div class="reasons">
+
+            <div class="reason">
+                <span>♡</span>
+                <h3>Gülüşün</h3>
+                <p>
+                    Ne zaman görsem içimde bir şeylerin
+                    düzeldiğini hissediyorum.
+                </p>
+            </div>
+
+            <div class="reason">
+                <span>☁</span>
+                <h3>Yanımda oluşun</h3>
+                <p>
+                    Bazen hiçbir şey yapmasak bile
+                    senin yanımda olman yetiyor.
+                </p>
+            </div>
+
+            <div class="reason">
+                <span>∞</span>
+                <h3>Sen olman</h3>
+                <p>
+                    Bunun aslında başka bir açıklaması yok.
+                    Seni sen olduğun için seviyorum.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FİNAL -->
+
+<section class="final">
+
+    <div class="final-box">
+
+        <div class="small">son bir şey</div>
+
+        <h2>
+            Seni üzmek<br>
+            değil,<br>
+            güldürmek istiyorum.
+        </h2>
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+        <p>
+            Ne olursa olsun yüzünde güzel bir gülümseme
+            görmek benim için dünyanın en güzel şeylerinden biri.
+            <br><br>
+            İyi ki varsın yavrum.
+        </p>
+
+        <button onclick="showMessage()">
+            Bir şeye bas bakalım
+        </button>
+
+        <div id="message">
+            Seni seviyorum. Hem de çok. ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function showMessage() {
+
+    const message = document.getElementById("message");
+
+    message.style.display = "block";
+
+}
+
+</script>
+
+</body>
+</html>
